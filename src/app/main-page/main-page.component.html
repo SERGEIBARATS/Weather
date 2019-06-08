@@ -1,0 +1,57 @@
+
+
+
+<div *ngIf="list.length!=0">
+<div class="main" style="margin: auto;
+  width: 100%;
+  border: 3px solid rgb(5, 68, 141);
+  padding: 10px;">
+  <div class="main">
+  <div class="container " style="position:relative;">
+    <div class="row">
+      <div class="col-xs-12 col-lg-12 ">
+          <form> <input type="text" class="form-control" #searchVariable = "ngModel"
+             [ngModelOptions]="{standalone: true}" aria-label="Default" [(ngModel)]="userInput" (keyup.enter)="userSearch(userInput)"
+            placeholder="search location weather" aria-describedby="inputGroup-sizing-default" required pattern="[A-Z,a-z, ]{0,}"><br>
+            <div  style="color: brown" [hidden]="searchVariable.valid||searchVariable.pristine||searchVariable.value.length==0">
+                search only English letters
+              </div>
+        </form>
+          <a class="list-group-item list-group-item-action flex-column align-items-start active">
+              <div class="d-flex w-100 justify-content-between">
+                <h5 class="mb-1">Weather in {{city}},{{country}}</h5>
+
+                <small>current</small>
+
+              </div>
+                <p class="mb-1">{{temp}} C</p>
+                <small>{{description}}</small><br>
+                <small>{{myDate}}</small>
+
+                <button *ngIf="favoriteItem" type="button" class="btn btn-success button1" (click)="add()">make it favorite</button>
+
+                <button *ngIf="!favoriteItem" type="button" class="btn btn-danger button1" (click)="delete()">remove from favorites</button><br><br>
+
+            </a><br>
+            <h4>A 5-day forecast of {{city}},{{country}}</h4>
+        <div class="list-group" *ngFor="let wtr of list">
+          <a class="list-group-item list-group-item-action flex-column align-items-start">
+            <div class="d-flex w-100 justify-content-between">
+              <h5 class="mb-1">{{wtr.temp}}C</h5>
+              <small>{{wtr.date}}</small>
+            </div>
+
+              <small>{{wtr.description}}</small>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+</div>
+
+
+</div>
+
+

@@ -1,0 +1,27 @@
+<div *ngIf="showBool">
+  <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-lg-12 ">
+          <ul class="list-group" *ngFor="let fvr of arrayOfFavorites">
+              <li class="list-group-item" >
+                <a (click)="favoriteClicked(fvr.city)" class="list-group-item list-group-item-action" [routerLink]="['/app/main']">
+                    <h5 class="mb-1">Weather in {{fvr.city}},{{fvr.country}}</h5>
+                    <h4 class="mb-1">{{fvr.temp}}C</h4>
+                </a>
+              </li>
+          </ul>
+        </div>
+      </div>
+  </div>
+</div>
+
+<div *ngIf="!showBool">
+  <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-lg-12 ">
+          No Favorites
+        </div>
+      </div>
+  </div>
+</div>
+
