@@ -1,27 +1,32 @@
-# HomeAssignmentHerolo
+# Weather 
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.1.2.
+Technologies: Angular 8 /Typescript , using accuweather API ;
 
-## Development server
+***
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+start: ``` npm install , npm start and enter to 'http://localhost:4200/' ```
 
-## Code scaffolding
+***
+# API: 
+The API that you’ll use for this app is AccuWeather API . Please signup and create a new app in
+order to get an API key.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+You will use 3 endpoints: location autocomplete for the search field, get current weather and
+5-day daily forecast . Please read those API docs.
 
-## Build
+NOTE: this API is limited to 50 requests per day. our recommendation is to save the responses
+and use them locally during development.
+***
+## create a local .env file with the following keys:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+API_KEY = {accuweather API key}
+***
+# Links:
+AccuWeather API: https://developer.accuweather.com
 
-## Running unit tests
+location autocomplete: https://developer.accuweather.com/accuweather-locations-api/apis/get/locations/v1/cities
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+get current weather: https://developer.accuweather.com/accuweather-current-conditions-api/apis/get/currentconditions/v1/%7BlocationKey%7Dautocomplete
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+5-day daily forecast: https://developer.accuweather.com/accuweather-forecast-api/apis/get/forecasts/v1/daily/5day/%7BlocationKey%7D
+***
