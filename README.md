@@ -1,6 +1,6 @@
 # Weather 
 
-Technologies: Angular 8 /Typescript , using accuweather API ;
+Technologies: Angular 7 /Typescript , using accuweather API ;
 
 ***
 
